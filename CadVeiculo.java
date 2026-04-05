@@ -10,8 +10,8 @@ void main(){
             1 - Cadastrar Veículo;
             2 - Listar Veículos;
             3 - Remover Veículo
-                3.1 - Por Índice
-                3.2 - Por Nome
+                1 - Por Índice
+                2 - Por Nome
             4 - Buscar Veículo;
             5 - Editar Veículo;
             0 - Sair
@@ -62,11 +62,11 @@ void excluir() {
     }
 
     IO.println("Escolha a forma de remoção:");
-    IO.println("3.1 - Por Índice");
-    IO.println("3.2 - Por Nome");
-    int opc = Input.scanInt("Digite a opção 3.1 ou 3.2: ");
+    IO.println("1 - Por Índice");
+    IO.println("2 - Por Nome");
+    int opc = Input.scanInt("Digite a opção 1 ou 2: ");
 
-    if (opc == 1) { // 3.1
+    if (opc == 1) { // 1
         listar();
         int indice = Input.scanInt("Digite o ID do veículo a ser removido: ");
         if (indice > veiculos.size() || indice <= 0) {
@@ -75,7 +75,7 @@ void excluir() {
             veiculos.remove(indice - 1);
             IO.println("Veículo removido com sucesso!");
         }
-    } else if (opc == 2) { // 3.2
+    } else if (opc == 2) { // 2
         String nome = IO.readln("Digite o nome do veículo a ser removido: ").trim();
         if (nome.isEmpty()) {
             IO.println("Nome do veículo inválido!");
